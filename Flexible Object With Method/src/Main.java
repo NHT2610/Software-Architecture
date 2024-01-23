@@ -90,8 +90,16 @@ interface MyObjectMethod {
   boolean execute(String inputParams, String[] outputParams);
 }
 
-class IsPositive implements MyObjectMethod {
-  private final Fraction fraction;
+class FractionMethod implements MyObjectMethod {
+  protected Fraction fraction;
+  @Override
+  public boolean execute(String inputParams, String[] outputParams) {
+    outputParams[0] = "";
+    return false;
+  }
+}
+
+class IsPositive extends FractionMethod {
   public IsPositive(Fraction fraction) {
     this.fraction = fraction;
   }
@@ -106,8 +114,7 @@ class IsPositive implements MyObjectMethod {
   }
 }
 
-class GetValue implements MyObjectMethod {
-  private final Fraction fraction;
+class GetValue extends FractionMethod {
   public GetValue(Fraction fraction) {
     this.fraction = fraction;
   }
@@ -122,8 +129,7 @@ class GetValue implements MyObjectMethod {
   }
 }
 
-class IsGreaterThan implements MyObjectMethod {
-  private final Fraction fraction;
+class IsGreaterThan extends FractionMethod {
   public IsGreaterThan(Fraction fraction) {
     this.fraction = fraction;
   }
