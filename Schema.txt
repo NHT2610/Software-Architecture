@@ -1,0 +1,15 @@
+2
+Phan So
+2
+Tu So
+int
+Mau So
+int
+Sinh Vien
+3
+MSSV
+String
+Ho va Ten
+String
+Diem TB
+double
